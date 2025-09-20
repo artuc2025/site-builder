@@ -1,0 +1,27 @@
+// Common mixins (keep comments in English)
+// Ensure tokens are available when this file is used as a module
+@use './variables' as *;
+
+@mixin focus-ring($color: #3b82f6) {
+  box-shadow: 0 0 0 3px rgba($color, 0.45);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@mixin sr-only() {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@mixin container($max: 1200px) {
+  margin-inline: auto;
+  max-width: $max;
+  padding-inline: $space-4;
+}

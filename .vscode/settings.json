@@ -1,0 +1,36 @@
+﻿// VS Code workspace settings
+// Keep comments in English per project convention
+{
+  // Use Prettier as the default formatter
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Auto format on save and organize imports
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+
+  // Ensure consistent line endings/newlines
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // Prettier preferences to match project style
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 100,
+  "prettier.arrowParens": "avoid",
+
+  // ESLint and Stylelint validation
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+  "stylelint.validate": ["css", "scss", "vue"],
+
+  // Use workspace TypeScript for Volar
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "volar.useWorkspaceTsdk": true,
+
+  // Avoid Vetur interference when installed
+  "vetur.validation.template": false
+}

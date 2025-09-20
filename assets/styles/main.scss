@@ -1,0 +1,19 @@
+// Global entry for styles
+// BEM: .block, .block__element, .block--modifier
+
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+
+@use './base/base';
+
+// Example BEM block to validate pipeline
+.app-shell {
+  background: $color-bg;
+  color: $color-text;
+  min-height: 100vh;
+
+  &__container {
+    @include container(1200px);
+    padding-block: $space-8;
+  }
+}
