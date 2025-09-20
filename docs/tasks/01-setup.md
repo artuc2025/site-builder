@@ -234,4 +234,4 @@ module.exports = {
 
 - [x] Запустить `dev` и проверить импорт глобальных стилей
 - [x] Запустить `lint`, `lint:style`, `format`, `type-check` — убедиться, что проходят
-- [ ] Первый коммит: baseline проекта
+- [x] Первый коммит: baseline проекта (`chore: initial project setup`)
