@@ -14,7 +14,7 @@
 ## 2) Каркас Vue + SCSS
 
 - [x] Подготовить структуру `components/ui` (подкаталоги на компонент, шаблон `Component.vue`, barrel `index.ts`)
-- [ ] Добавить генератор/boйлерплейт для создания новых UI-компонентов (скрипт или plop)
+- [x] Добавить генератор/boilerplate для создания новых UI-компонентов (скрипт `npm run create:ui`)
 - [ ] Сгенерировать минимальные Vue-компоненты для набора P0 (button, input, select, textarea, checkbox, radio, switch, card, modal, toolbar, tabs, breadcrumb, toast)
 - [ ] Создать SCSS-партиалы (`_button.scss`, `_input.scss`, ...) в `assets/styles/components/` и подключить через `_index.scss`
 - [ ] Обновить `components/ui/index.ts` и `assets/styles/components/_index.scss` для экспорта P0 компонентов

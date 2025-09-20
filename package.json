@@ -13,7 +13,8 @@
     "lint": "eslint . --ext .ts,.js,.vue",
     "lint:style": "stylelint \"**/*.{css,scss}\"",
     "format": "prettier --write .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "create:ui": "node scripts/create-ui-component.mjs"
   },
   "lint-staged": {
     "*.{js,ts,vue}": [
