@@ -8,7 +8,12 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./*"],
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@composables/*": ["./composables/*"],
+      "@stores/*": ["./stores/*"],
+      "@modules/*": ["./modules/*"],
+      "@plugins/*": ["./plugins/*"]
     },
     "types": ["node"]
   },

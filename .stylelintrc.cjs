@@ -1,14 +1,25 @@
-/* Stylelint config for SCSS + BEM
+﻿/* Stylelint config for SCSS + BEM
  * Keep comments in English.
  */
 module.exports = {
-  extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier-scss'],
+  customSyntax: 'postcss-scss',
+  extends: [
+    'stylelint-config-recommended-vue',
+    'stylelint-config-standard-scss',
+    'stylelint-config-prettier-scss',
+  ],
   plugins: ['stylelint-order'],
+  overrides: [
+    {
+      files: ['**/*.vue'],
+      customSyntax: 'postcss-html',
+    },
+  ],
   rules: {
     // BEM class naming: block, block__element, block--modifier
     'selector-class-pattern': [
       '^[a-z]([a-z0-9-]*)(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$',
-      { resolveNestedSelectors: true }
+      { resolveNestedSelectors: true },
     ],
     // Property/order conventions
     'order/order': [
@@ -18,7 +29,7 @@ module.exports = {
       'declarations',
       { type: 'at-rule', name: 'supports' },
       { type: 'at-rule', name: 'media' },
-      'rules'
+      'rules',
     ],
     'order/properties-alphabetical-order': true,
     // Relaxations for practicality
@@ -26,9 +37,9 @@ module.exports = {
       'lower',
       {
         // Allow proper-cased font family names
-        ignoreProperties: ['font-family']
-      }
+        ignoreProperties: ['font-family'],
+      },
     ],
-    'declaration-empty-line-before': null
-  }
+    'declaration-empty-line-before': null,
+  },
 }

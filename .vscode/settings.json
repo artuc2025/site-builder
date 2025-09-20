@@ -1,4 +1,4 @@
-﻿// VS Code workspace settings
+// VS Code workspace settings
 // Keep comments in English per project convention
 {
   // Use Prettier as the default formatter
@@ -6,8 +6,8 @@
   // Auto format on save and organize imports
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.eslint": true
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
 
   // Ensure consistent line endings/newlines

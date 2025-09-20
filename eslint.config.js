@@ -49,6 +49,13 @@ export default [
       ],
     },
   },
+  {
+    files: ['**/*.vue'],
+    rules: {
+      // Allow Nuxt auto-imported composables/macros without explicit import
+      'no-undef': 'off',
+    },
+  },
   // Enable Prettier as a lint rule and compatible settings
   prettierRecommended,
 ]
