@@ -1,8 +1,7 @@
-// Base styles: reset / normalize light-touch
+﻿// Base styles: reset / normalize light-touch
 // Keep base minimal; rely on component-level BEM blocks
 // Ensure design tokens are available in this module
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts' as *;
 
 html {
   font-size: 100%;

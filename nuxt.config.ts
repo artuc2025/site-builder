@@ -52,10 +52,7 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           // Make SCSS tokens and mixins available in every SCSS file
-          additionalData: [
-            '@use "@/assets/styles/abstracts/variables" as *;',
-            '@use "@/assets/styles/abstracts/mixins" as *;',
-          ].join('\n'),
+          additionalData: '@use "@/assets/styles/abstracts" as *;',
         },
       },
     },

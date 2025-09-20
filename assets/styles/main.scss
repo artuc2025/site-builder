@@ -1,10 +1,14 @@
-// Global entry for styles
+﻿// Global entry for styles
 // BEM: .block, .block__element, .block--modifier
 
-@use './abstracts/variables' as *;
-@use './abstracts/mixins' as *;
+@use './abstracts' as *;
+@use './base';
 
-@use './base/base';
+// Layout, component and utility layers are exported via their indexes.
+// They can remain as @use directives even if they currently forward no files.
+@use './layout';
+@use './components';
+@use './utilities';
 
 // Example BEM block to validate pipeline
 .app-shell {
