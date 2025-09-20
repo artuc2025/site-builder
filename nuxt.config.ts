@@ -1,4 +1,4 @@
-﻿// https://nuxt.com/docs/api/configuration/nuxt-config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'node:url'
 
 import { defineNuxtConfig } from 'nuxt/config'
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   modules: ['@pinia/nuxt'],
   // Ensure auto imports pick new composables without restart
   imports: {
-    dirs: [resolvePath('./composables')],
+    dirs: [resolvePath('./composables'), resolvePath('./stores')],
   },
   // Auto-register components from controlled directories
   components: [

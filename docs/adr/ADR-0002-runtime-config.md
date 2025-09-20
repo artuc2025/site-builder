@@ -1,7 +1,7 @@
-﻿# ADR-0002: Runtime config and environment variables
+# ADR-0002: Runtime config and environment variables
 
 Дата: 2025-09-20
-Статус: Draft
+Статус: Adopted
 Автор: Codex
 
 ## Контекст

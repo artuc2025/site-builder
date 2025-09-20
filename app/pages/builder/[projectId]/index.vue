@@ -1,32 +1,21 @@
-﻿<template>
-  <section class="builder-page">
-    <header class="builder-page__header">
-      <h1 class="builder-page__title">Welcome to the builder</h1>
-      <p class="builder-page__subtitle">
-        Spin up your next experience in minutes. Start from a template or craft a layout from
-        scratch.
+<template>
+  <section class="builder-project">
+    <header class="builder-project__header">
+      <h1 class="builder-project__title">Project {{ route.params.projectId }}</h1>
+      <p class="builder-project__subtitle">
+        Configure the layout and content for this project. Everything saves instantly as you work.
       </p>
     </header>
-    <div class="builder-page__canvas">
-      <p class="builder-page__placeholder">
-        The canvas lives here. Open a project or create a fresh one to begin editing.
+    <div class="builder-project__canvas">
+      <p class="builder-project__placeholder">
+        Choose a block on the left to begin. Live updates render here on the canvas.
       </p>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const projectsStore = useProjectsStore()
 const route = useRoute()
-
-const targetProjectId = projectsStore.currentProjectId ?? projectsStore.recentProjectIds[0]
-
-if (route.name === 'builder' && targetProjectId) {
-  await navigateTo(
-    { name: 'builder-projectId', params: { projectId: targetProjectId } },
-    { replace: true }
-  )
-}
 
 definePageMeta({
   layout: 'builder',
@@ -34,7 +23,7 @@ definePageMeta({
 </script>
 
 <style scoped lang="scss">
-.builder-page {
+.builder-project {
   color: #f8fafc;
   display: flex;
   flex-direction: column;
