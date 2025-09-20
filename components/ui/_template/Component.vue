@@ -6,12 +6,8 @@
 </template>
 
 <script setup lang="ts">
-// Update component name when duplicating this template
-// eslint-disable-next-line vue/multi-word-component-names
-const componentName = 'UiComponent'
-
 defineOptions({
-  name: componentName,
+  name: 'UiComponent',
 })
 
 // TODO: define props/emit interface

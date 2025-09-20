@@ -1,8 +1,11 @@
 ﻿#!/usr/bin/env node
+/* eslint-env node */
+import process from 'node:process'
 import { promises as fs } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+const { console } = globalThis
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const projectRoot = path.resolve(__dirname, '..')
@@ -14,7 +17,7 @@ if (!rawName) {
   process.exit(1)
 }
 
-const toKebab = (value) =>
+const toKebab = value =>
   value
     .trim()
     .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
@@ -28,11 +31,11 @@ if (!/^[a-z][a-z0-9-]*$/.test(kebab)) {
   process.exit(1)
 }
 
-const toPascal = (value) =>
+const toPascal = value =>
   value
     .split('-')
     .filter(Boolean)
-    .map((chunk) => chunk.charAt(0).toUpperCase() + chunk.slice(1))
+    .map(chunk => chunk.charAt(0).toUpperCase() + chunk.slice(1))
     .join('')
 
 const pascal = toPascal(kebab)
@@ -62,7 +65,6 @@ async function main() {
 
   await fs.writeFile(targetVuePath, replaced, 'utf8')
 
-  // Remove placeholder gitkeep if present
   const gitkeepPath = path.join(componentDir, '.gitkeep')
   const gitkeepExists = await fs
     .access(gitkeepPath)
@@ -86,22 +88,22 @@ async function main() {
 
   const lines = indexContent
     .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line && !line.startsWith('//') && !line.startsWith('export {}'))
+    .map(line => line.trim())
+    .filter(line => line && !line.startsWith('//') && !line.startsWith('export {}'))
 
   lines.push(exportLine.trim())
   const uniqueLines = Array.from(new Set(lines))
   uniqueLines.sort((a, b) => a.localeCompare(b))
 
   const header = `// Re-export UI components from here as they are implemented.\n`
-  const body = uniqueLines.map((line) => `${line};`).join('\n')
+  const body = uniqueLines.map(line => `${line};`).join('\n')
 
   await fs.writeFile(indexPath, `${header}\n${body}\n`, 'utf8')
 
   console.log(`✔ Created ${componentName} in ${path.relative(projectRoot, componentDir)}`)
 }
 
-main().catch((error) => {
+main().catch(error => {
   console.error(error)
   process.exit(1)
 })
