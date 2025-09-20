@@ -1,3 +1,4 @@
 ﻿# Abstracts Layer
 
-Содержит дизайн-токены (`_variables.scss`) и вспомогательные примеси (`_mixins.scss`). Подключается через `@use '@/assets/styles/abstracts' as *;`.
+Содержит дизайн-токены (`_tokens.scss`), вспомогательные функции (`_functions.scss`) и примеси (`_mixins.scss`).
+Их можно подключать через `@use "@/assets/styles/abstracts" as *;`. Документация токенов: `docs/tokens.md`.

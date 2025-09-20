@@ -1,0 +1,16 @@
+﻿@use 'sass:math';
+
+// Convert pixel values to rems based on the design base font size
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Convert pixel values to ems (useful for media queries)
+@function em($px, $base: 16) {
+  @return math.div($px, $base) * 1em;
+}
+
+// Clamp helper to generate fluid sizes
+@function fluid($min, $vw, $max) {
+  @return clamp($min, $vw, $max);
+}

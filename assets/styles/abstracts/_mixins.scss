@@ -1,6 +1,7 @@
-// Common mixins (keep comments in English)
+﻿// Common mixins (keep comments in English)
 // Ensure tokens are available when this file is used as a module
-@use './variables' as *;
+@use './tokens' as *;
+@use './functions' as fn;
 
 @mixin focus-ring($color: #3b82f6) {
   box-shadow: 0 0 0 3px rgba($color, 0.45);
@@ -25,3 +26,4 @@
   max-width: $max;
   padding-inline: $space-4;
 }
+

@@ -8,7 +8,7 @@ module.exports = {
     'stylelint-config-standard-scss',
     'stylelint-config-prettier-scss',
   ],
-  plugins: ['stylelint-order'],
+  plugins: ['stylelint-order', 'stylelint-selector-bem-pattern'],
   overrides: [
     {
       files: ['**/*.vue'],
@@ -21,6 +21,13 @@ module.exports = {
       '^[a-z]([a-z0-9-]*)(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$',
       { resolveNestedSelectors: true },
     ],
+    'plugin/selector-bem-pattern': {
+      preset: 'bem',
+      componentName: '[a-z]+(?:-[a-z0-9]+)*',
+      componentSelectors:
+        '^\\.{componentName}(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$',
+      utilitySelectors: '^\\.(?:u|is|has)-[a-z0-9-]+$',
+    },
     // Property/order conventions
     'order/order': [
       'custom-properties',
