@@ -1,7 +1,6 @@
-﻿// Global entry for styles
+// Global entry for styles
 // BEM: .block, .block__element, .block--modifier
 
-@use './abstracts' as *;
 @use './base';
 
 // Layout, component and utility layers are exported via their indexes.

@@ -36,7 +36,7 @@ npm install
 
 - `app/` — файлы приложения Nuxt (layouts, pages, components)
 - `assets/styles/` — SCSS архитектура
-  - `abstracts/_variables.scss` — токены (цвета, типографика, отступы)
+  - `abstracts/_tokens.scss` — токены (цвета, типографика, отступы)
   - `abstracts/_mixins.scss` — миксины (container, focus-ring, sr-only)
   - `base/_base.scss` — базовые стили/normalize
   - `main.scss` — глобальная точка входа
