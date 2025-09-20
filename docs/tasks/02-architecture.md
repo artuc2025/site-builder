@@ -33,11 +33,10 @@
 ## 5) Системные скрипты
 
 - [x] Добавить npm-скрипт `dev:clean` (очистка `.nuxt`, `.output`)
-- [ ] Подготовить `lint` для ADR/документации (опционально)
 - [x] Зафиксировать в README раздел «Архитектура & ADR»
 
 ## 6) Проверка
 
 - [x] Запустить `npm run lint` и `npm run type-check` после изменений
 - [x] Обновить `docs/plan.md` ссылкой на текущий файл и кратким статусом
-- [ ] Сделать коммит `feat: architecture groundwork`
+- [x] Сделать коммит `feat: architecture groundwork`
