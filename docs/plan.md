@@ -90,3 +90,5 @@
 Подробные подзадачи по разделу 1: [docs/tasks/01-setup.md](./tasks/01-setup.md)
 Подробные подзадачи по разделу 2: [docs/tasks/02-architecture.md](./tasks/02-architecture.md)
 Подробные подзадачи по разделу 3: [docs/tasks/03-frontend-styles.md](./tasks/03-frontend-styles.md)
+Подробные подзадачи по разделу 4: [docs/tasks/04-ui-library.md](./tasks/04-ui-library.md)
+
