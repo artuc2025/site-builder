@@ -9,6 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prepare": "husky",
+    "dev:clean": "npx nuxi cleanup",
     "lint": "eslint . --ext .ts,.js,.vue",
     "lint:style": "stylelint \"**/*.{css,scss}\"",
     "format": "prettier --write .",

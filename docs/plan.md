@@ -15,6 +15,9 @@
 - Настроить автоимпорты, runtime config, переменные окружения и алиасы
 - Задокументировать ключевые архитектурные решения (ADR)
 
+Статус: в работе → см. `docs/tasks/02-architecture.md` (готовы layout, builder, ADR-0001/0002, runtime config).
+
+
 ## 3. Дизайн‑система и стили (SCSS + BEM)
 
 - Определить архитектуру SCSS (например, `abstracts`, `base`, `components`, `layout`, `utilities`)
@@ -80,3 +83,4 @@
 
 —
 Подробные подзадачи по разделу 1: [docs/tasks/01-setup.md](./tasks/01-setup.md)
+
