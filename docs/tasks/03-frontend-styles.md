@@ -25,8 +25,8 @@
 
 ## 5) Storybook
 
-- [ ] Установить `@storybook/vue3`, `@storybook/addon-essentials`, `@storybook/addon-interactions`
-- [ ] Сгенерировать `.storybook/main.ts` и `.storybook/preview.ts`, подключить глобальные стили
-- [ ] Добавить пример `Button.stories.ts` и настроить CSF-формат
-- [ ] Создать npm-скрипты `storybook` и `build-storybook` в `package.json`
-- [ ] Спланировать публикацию Storybook (Chromatic или статика из `dist-storybook`)
+- [x] Установить `@storybook/vue3`, `@storybook/addon-essentials`, `@storybook/addon-interactions`
+- [x] Сгенерировать `.storybook/main.ts` и `.storybook/preview.ts`, подключить глобальные стили
+- [x] Добавить пример `Button.stories.ts` и настроить CSF-формат
+- [x] Создать npm-скрипты `storybook` и `build-storybook` в `package.json`
+- [x] Спланировать публикацию Storybook (Chromatic или статика из `dist-storybook`)
