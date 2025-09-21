@@ -1,0 +1,129 @@
+﻿@use '@/assets/styles/abstracts' as *;
+
+.ui-switch {
+  color: $color-text;
+  display: inline-flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  &__label-wrapper {
+    align-items: center;
+    display: inline-flex;
+    gap: $space-2;
+    position: relative;
+  }
+
+  &__input {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  &__track {
+    align-items: center;
+    background-color: rgba($color-text, 0.25);
+    border-radius: $radius-lg;
+    display: inline-flex;
+    height: 1.5rem;
+    padding: $space-1;
+    transition: $transition-base;
+    width: 3rem;
+  }
+
+  &__thumb {
+    background-color: $color-surface;
+    border-radius: 999px;
+    height: 1.125rem;
+    transition: $transition-base;
+    width: 1.125rem;
+  }
+
+  &__label {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  &__hint,
+  &__error {
+    font-size: 0.8125rem;
+    margin-left: calc(3rem + $space-2);
+  }
+
+  &__hint {
+    color: rgba($color-text, 0.7);
+  }
+
+  &__error {
+    color: $color-danger;
+  }
+
+  &--state-success {
+    & .ui-switch__track {
+      background-color: rgba($color-success, 0.35);
+    }
+
+    & .ui-switch__hint {
+      color: $color-success;
+    }
+  }
+
+  &--state-error {
+    & .ui-switch__track {
+      background-color: rgba($color-danger, 0.35);
+    }
+
+    & .ui-switch__hint {
+      color: $color-danger;
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.6;
+  }
+
+  &.is-loading {
+    & .ui-switch__track {
+      position: relative;
+    }
+
+    & .ui-switch__track::after {
+      animation: ui-switch-spin 1s linear infinite;
+      border: 2px solid rgba($color-primary-contrast, 0.3);
+      border-radius: 999px;
+      border-top-color: $color-primary-contrast;
+      content: '';
+      height: 1rem;
+      left: 50%;
+      margin-left: -0.5rem;
+      margin-top: -0.5rem;
+      position: absolute;
+      top: 50%;
+      width: 1rem;
+    }
+
+    & .ui-switch__thumb {
+      opacity: 0;
+    }
+  }
+
+  &.is-checked {
+    & .ui-switch__track {
+      background-color: $color-primary;
+      justify-content: flex-end;
+    }
+
+    & .ui-switch__thumb {
+      background-color: $color-primary-contrast;
+    }
+  }
+}
+
+@keyframes ui-switch-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
