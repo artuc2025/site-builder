@@ -1,0 +1,95 @@
+﻿@use '@/assets/styles/abstracts' as *;
+
+.ui-radio {
+  color: $color-text;
+  display: inline-flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  &__label-wrapper {
+    align-items: center;
+    display: inline-flex;
+    gap: $space-2;
+    position: relative;
+  }
+
+  &__input {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+
+  &__control {
+    align-items: center;
+    background-color: $color-surface;
+    border: 1px solid rgba($color-text, 0.4);
+    border-radius: 999px;
+    display: inline-flex;
+    height: 1.25rem;
+    justify-content: center;
+    transition: $transition-base;
+    width: 1.25rem;
+  }
+
+  &__dot {
+    background-color: $color-primary;
+    border-radius: 999px;
+    height: 0.5rem;
+    opacity: 0;
+    transition: $transition-base;
+    width: 0.5rem;
+  }
+
+  &__label {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+
+  &__hint,
+  &__error {
+    font-size: 0.8125rem;
+    margin-left: calc(1.25rem + $space-2);
+  }
+
+  &__hint {
+    color: rgba($color-text, 0.7);
+  }
+
+  &__error {
+    color: $color-danger;
+  }
+
+  &--state-success {
+    & .ui-radio__control {
+      border-color: rgba($color-success, 0.65);
+    }
+
+    & .ui-radio__hint {
+      color: $color-success;
+    }
+  }
+
+  &--state-error {
+    & .ui-radio__control {
+      border-color: rgba($color-danger, 0.65);
+    }
+
+    & .ui-radio__hint {
+      color: $color-danger;
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.6;
+  }
+
+  &.is-checked {
+    & .ui-radio__control {
+      border-color: $color-primary;
+    }
+
+    & .ui-radio__dot {
+      opacity: 1;
+    }
+  }
+}
