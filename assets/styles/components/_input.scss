@@ -1,0 +1,121 @@
+﻿@use '@/assets/styles/abstracts' as *;
+
+.ui-input {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  color: $color-text;
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: baseline;
+    gap: $space-1;
+  }
+
+  &__required {
+    color: $color-danger;
+    font-weight: 700;
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    background-color: $color-surface;
+    border: 1px solid rgba($color-text, 0.2);
+    border-radius: $radius-sm;
+    padding-inline: $space-2;
+    transition: $transition-base;
+  }
+
+  &__affix {
+    color: rgba($color-text, 0.8);
+    display: inline-flex;
+    align-items: center;
+    gap: $space-1;
+    font-size: 0.875rem;
+
+    &--prefix {
+      margin-inline-end: $space-1;
+    }
+
+    &--suffix {
+      margin-inline-start: $space-1;
+    }
+  }
+
+  &__field {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    min-height: 2.5rem;
+    padding: $space-2 0;
+
+    &::placeholder {
+      color: rgba($color-text, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__hint {
+    font-size: 0.75rem;
+    color: rgba($color-text, 0.7);
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: $color-danger;
+  }
+
+  &:focus-within {
+    & .ui-input__control {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 1px rgba($color-primary, 0.55);
+    }
+  }
+
+  &--state-success {
+    & .ui-input__control {
+      border-color: rgba($color-success, 0.6);
+      box-shadow: 0 0 0 1px rgba($color-success, 0.35);
+    }
+
+    & .ui-input__hint {
+      color: $color-success;
+    }
+  }
+
+  &--state-error {
+    & .ui-input__control {
+      border-color: rgba($color-danger, 0.65);
+      box-shadow: 0 0 0 1px rgba($color-danger, 0.45);
+    }
+
+    & .ui-input__hint {
+      color: $color-danger;
+    }
+  }
+
+  &.is-disabled {
+    & .ui-input__control {
+      background-color: rgba($color-surface, 0.6);
+      border-color: rgba($color-text, 0.1);
+    }
+
+    & .ui-input__field {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+}
