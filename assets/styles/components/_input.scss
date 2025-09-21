@@ -1,16 +1,16 @@
 ﻿@use '@/assets/styles/abstracts' as *;
 
 .ui-input {
+  color: $color-text;
   display: flex;
   flex-direction: column;
   gap: $space-1;
-  color: $color-text;
 
   &__label {
+    align-items: baseline;
+    display: inline-flex;
     font-size: 0.875rem;
     font-weight: 600;
-    display: inline-flex;
-    align-items: baseline;
     gap: $space-1;
   }
 
@@ -20,22 +20,22 @@
   }
 
   &__control {
-    display: flex;
     align-items: center;
-    gap: $space-1;
     background-color: $color-surface;
     border: 1px solid rgba($color-text, 0.2);
     border-radius: $radius-sm;
+    display: flex;
+    gap: $space-1;
     padding-inline: $space-2;
     transition: $transition-base;
   }
 
   &__affix {
+    align-items: center;
     color: rgba($color-text, 0.8);
     display: inline-flex;
-    align-items: center;
-    gap: $space-1;
     font-size: 0.875rem;
+    gap: $space-1;
 
     &--prefix {
       margin-inline-end: $space-1;
@@ -47,10 +47,10 @@
   }
 
   &__field {
-    flex: 1;
     background: transparent;
     border: 0;
     color: inherit;
+    flex: 1;
     font: inherit;
     min-height: 2.5rem;
     padding: $space-2 0;
@@ -69,20 +69,13 @@
   }
 
   &__hint {
-    font-size: 0.75rem;
     color: rgba($color-text, 0.7);
+    font-size: 0.75rem;
   }
 
   &__error {
-    font-size: 0.75rem;
     color: $color-danger;
-  }
-
-  &:focus-within {
-    & .ui-input__control {
-      border-color: $color-primary;
-      box-shadow: 0 0 0 1px rgba($color-primary, 0.55);
-    }
+    font-size: 0.75rem;
   }
 
   &--state-success {
@@ -116,6 +109,13 @@
     & .ui-input__field {
       cursor: not-allowed;
       opacity: 0.7;
+    }
+  }
+
+  &:focus-within {
+    & .ui-input__control {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 1px rgba($color-primary, 0.55);
     }
   }
 }
