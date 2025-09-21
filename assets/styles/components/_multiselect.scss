@@ -1,0 +1,217 @@
+﻿@use '@/assets/styles/abstracts' as *;
+
+.ui-multiselect {
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+
+  &__label {
+    align-items: baseline;
+    display: inline-flex;
+    font-size: 0.875rem;
+    font-weight: 600;
+    gap: $space-1;
+  }
+
+  &__required {
+    color: $color-danger;
+    font-weight: 700;
+  }
+
+  &__control {
+    position: relative;
+  }
+
+  &__trigger {
+    align-items: center;
+    background-color: $color-surface;
+    border: 1px solid rgba($color-text, 0.25);
+    border-radius: $radius-sm;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    gap: $space-2;
+    inline-size: 100%;
+    justify-content: space-between;
+    min-height: 2.75rem;
+    padding: $space-2 $space-3;
+    text-align: left;
+    transition: $transition-base;
+
+    &[data-placeholder='true'] {
+      color: rgba($color-text, 0.55);
+    }
+
+    &:focus-visible {
+      @include focus-ring($color-primary);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &__chips {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+    min-inline-size: 0;
+  }
+
+  &__placeholder {
+    color: rgba($color-text, 0.55);
+    font-size: 0.875rem;
+  }
+
+  &__chip {
+    align-items: center;
+    background-color: rgba($color-primary, 0.15);
+    border-radius: $radius-sm;
+    color: inherit;
+    display: inline-flex;
+    font-size: 0.8125rem;
+    gap: $space-1;
+    padding: $space-1 $space-2;
+
+    &--counter {
+      background-color: rgba($color-text, 0.15);
+    }
+  }
+
+  &__chip-remove {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 0;
+
+    &:hover {
+      color: rgba($color-text, 0.8);
+    }
+  }
+
+  &__icon {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    transition: transform 160ms ease;
+  }
+
+  &__list {
+    background-color: $color-surface;
+    border: 1px solid rgba($color-text, 0.2);
+    border-radius: $radius-sm;
+    box-shadow: $shadow-soft;
+    inset-inline: 0;
+    margin: $space-1 0 0;
+    max-height: 16rem;
+    overflow-y: auto;
+    padding: $space-1 0;
+    position: absolute;
+    z-index: 20;
+  }
+
+  &__option {
+    align-items: center;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    gap: $space-2;
+    justify-content: space-between;
+    padding: $space-2 $space-3;
+    transition: $transition-base;
+
+    &.is-highlighted {
+      background-color: rgba($color-primary, 0.15);
+    }
+
+    &.is-selected {
+      font-weight: 600;
+    }
+
+    &.is-disabled {
+      color: rgba($color-text, 0.4);
+      cursor: not-allowed;
+    }
+  }
+
+  &__option-check {
+    font-size: 0.75rem;
+  }
+
+  &__empty {
+    color: rgba($color-text, 0.6);
+    font-size: 0.875rem;
+    padding: $space-2 $space-3;
+  }
+
+  &__footer {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+    justify-content: space-between;
+  }
+
+  &__hint {
+    color: rgba($color-text, 0.7);
+    font-size: 0.75rem;
+  }
+
+  &__error {
+    color: $color-danger;
+    font-size: 0.75rem;
+  }
+
+  &--state-success {
+    & .ui-multiselect__trigger {
+      border-color: rgba($color-success, 0.6);
+      box-shadow: 0 0 0 1px rgba($color-success, 0.35);
+    }
+
+    & .ui-multiselect__hint {
+      color: $color-success;
+    }
+  }
+
+  &--state-error {
+    & .ui-multiselect__trigger {
+      border-color: rgba($color-danger, 0.65);
+      box-shadow: 0 0 0 1px rgba($color-danger, 0.45);
+    }
+
+    & .ui-multiselect__hint {
+      color: $color-danger;
+    }
+  }
+
+  &.is-disabled {
+    & .ui-multiselect__trigger {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &.is-open {
+    & .ui-multiselect__icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.ui-multiselect-fade-enter-active,
+.ui-multiselect-fade-leave-active {
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
+}
+
+.ui-multiselect-fade-enter-from,
+.ui-multiselect-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
