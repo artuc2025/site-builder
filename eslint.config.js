@@ -1,8 +1,10 @@
-// ESLint flat config for Nuxt 3 + Vue 3 + TypeScript
+﻿// ESLint flat config for Nuxt 3 + Vue 3 + TypeScript
 // Keep comments in English.
 import js from '@eslint/js'
 import tseslint from 'typescript-eslint'
+import tsParser from '@typescript-eslint/parser'
 import vue from 'eslint-plugin-vue'
+import vueParser from 'vue-eslint-parser'
 import importPlugin from 'eslint-plugin-import'
 import prettierRecommended from 'eslint-plugin-prettier/recommended'
 
@@ -51,6 +53,15 @@ export default [
   },
   {
     files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tsParser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        extraFileExtensions: ['.vue'],
+      },
+    },
     rules: {
       // Allow Nuxt auto-imported composables/macros without explicit import
       'no-undef': 'off',
@@ -59,3 +70,6 @@ export default [
   // Enable Prettier as a lint rule and compatible settings
   prettierRecommended,
 ]
+
+
+
